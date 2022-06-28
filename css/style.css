@@ -1,0 +1,12 @@
+.d-flex{
+    display: flex;
+    justify-content: space-around;
+}
+
+h1{
+    color: red;
+}
+
+.font-size{
+    font-size: 1.5rem;
+}
