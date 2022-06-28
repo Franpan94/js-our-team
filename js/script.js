@@ -2,57 +2,60 @@ const peoples = [
     {
         name: 'Wayne Barnett',
         role: 'Founder & CEO',
-        photo: 'wayne-barnett-founder-ceo.jpg',
+        photo: './img/wayne-barnett-founder-ceo.jpg',
     },
 
     {
         name: 'Angela Caroll',
         role: 'Chief Editor',
-        photo: 'angela-caroll-chief-editor.jpg',
+        photo: './img/angela-caroll-chief-editor.jpg'
     },
 
     {
         name: 'Walter Gordon',
         role: 'Office Manager',
-        photo: 'walter-gordon-office-manager.jpg',
+        photo: './img/walter-gordon-office-manager.jpg',
     },
 
     {
         name: 'Angela Lopez',
         role: 'Social Media Manager',
-        photo: 'angela-lopez-social-media-manager.jpg',
+        photo: './img/angela-lopez-social-media-manager.jpg',
     },
 
     {
         name: 'Scott Estrada',
         role: 'Developer',
-        photo: 'scott-estrada-developer.jpg',
+        photo: './img/scott-estrada-developer.jpg',
     },
 ];
 
 const superoutput = document.getElementById('super-output');
-superoutput.classList.add('d-flex');
+superoutput.classList.add('d-flex', 'width');
 
-const outputname = document.getElementById('outputname');
-const outputrole = document.getElementById('outputrole');
-const outputphoto = document.getElementById('outputphoto');
+const outputname = document.getElementById('output-name');
+const outputrole = document.getElementById('output-role');
+const outputphoto = document.getElementById('output-photo');
+
 
 for (let i = 0; i < peoples.length; i++) {
 
-    const subname = document.createElement('li');
+    const imgphoto = document.createElement('img');
+    imgphoto.classList.add('width-img');
+    imgphoto.setAttribute('src', peoples[i].photo);
+    outputname.append(imgphoto);
+
+    const subname = document.createElement('div');
     subname.classList.add('font-size');
     subname.innerHTML += `${peoples[i].name }`;
     outputname.append(subname);
 
-    const subrole = document.createElement('li');
-    subrole.classList.add('font-size');
+    const subrole = document.createElement('div');
+    subrole.classList.add('font-size', 'padding-bottom');
     subrole.innerHTML += `${peoples[i].role }`;
-    outputrole.append(subrole);
+    outputname.append(subrole);
 
-    const subphoto = document.createElement('li');
-    subphoto.classList.add('font-size');
-    subphoto.innerHTML += `${peoples[i].photo }`;
-    outputphoto.append(subphoto);
+    
 
     console.log(peoples[i].name);
     console.log(peoples[i].role);
